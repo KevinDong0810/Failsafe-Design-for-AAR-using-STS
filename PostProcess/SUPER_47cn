@@ -1,0 +1,8 @@
+digraph G {
+0 [shape=box, label="0", style=filled, shape=box, height=0.3, width=0.3];
+1 [shape=box, label="1", style=filled, shape=box, height=0.3, width=0.3];
+128 [label="3_Tanker_0"];
+128 -> 0 [style=dotted];
+128 -> 1 [style=filled];
+label =SUPER_47cn;
+}

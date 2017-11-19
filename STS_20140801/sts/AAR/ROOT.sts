@@ -1,0 +1,415 @@
+root = Root 
+{
+Root = AND {1_Receiver, 2_Pilot, 3_Tanker, 4_Specification}
+2_Pilot = OR {Pilot_0, Pilot_1, Pilot_2, Pilot_3, Pilot_4, Pilot_5}
+3_Tanker = OR {Tanker_0, Tanker_1, Tanker_2, Tanker_3, Tanker_4, Tanker_5, Tanker_6, Tanker_7, Tanker_8, Tanker_9, Tanker_10}
+1_Receiver = AND {Autopilot, Subsystem}
+Autopilot = OR {00_Standby, 01_Rendezvous, 02_Refueling, 03_EL, 04_RTL}
+01_Rendezvous = OR {RV_00, RV_01, RV_02, RV_03, RV_03, RV_04, RV_05, RV_06, RV_07}
+02_Refueling = OR {Ref_00, Ref_01, Ref_02, Ref_03, Ref_04, Ref_05, Ref_06, Ref_07, Ref_08}
+Subsystem =  AND {09_Other, 08_Propulsion, 07_AAR_Equipment, 06_Datalink, 05_Guidance} 
+09_Other = OR {Other_0, Other_1, Other_2}
+08_Propulsion =  OR {Prop_0, Prop_1, Prop_2, Prop_3}
+07_AAR_Equipment = OR {Equip_0, Equip_1, Equip_2, Equip_3, Equip_4}
+06_Datalink = OR {Datalink_0, Datalink_1, Datalink_2} 
+05_Guidance = OR {Guidance_0, Guidance_1, Guidance_2} 
+4_Specification = AND {Spec_0, Spec_1, Spec_2, Spec_3, Spec_4, Spec_5, Spec_6, Spec_7, Spec_8}
+Spec_0 = OR {Spec_0_0, Spec_0_1, Spec_0_2}
+Spec_1 = OR {Spec_1_0, Spec_1_1, Spec_1_2}
+Spec_2 = OR {Spec_2_0, Spec_2_1, Spec_2_2}
+Spec_3 = OR {Spec_3_0, Spec_3_1, Spec_3_2}
+Spec_4 = OR {Spec_4_0, Spec_4_1, Spec_4_2}
+Spec_5 = OR {Spec_5_0, Spec_5_1, Spec_5_2}
+Spec_6 = OR {Spec_6_0, Spec_6_1, Spec_6_2}
+Spec_7 = OR {Spec_7_0, Spec_7_1, Spec_7_2, Spec_7_3}
+Spec_8 = OR {Spec_8_0, Spec_8_1, Spec_8_2, Spec_8_3}
+}
+
+2_Pilot
+{01, 03, 05, 07, 09, 11}
+{}
+{
+[Pilot_0 07 Pilot_1]
+[Pilot_1 01 Pilot_0]
+[Pilot_1 03 Pilot_0]
+[Pilot_1 05 Pilot_0]
+[Pilot_0 09 Pilot_2]
+[Pilot_2 03 Pilot_0]
+[Pilot_2 05 Pilot_0]
+[Pilot_2 01 Pilot_4]
+[Pilot_0 11 Pilot_3]
+[Pilot_3 05 Pilot_0]
+[Pilot_3 01 Pilot_5]
+[Pilot_3 03 Pilot_5]
+[Pilot_0 01 Pilot_0]
+[Pilot_0 03 Pilot_0]
+[Pilot_0 05 Pilot_0]
+}
+
+3_Tanker
+{21, 25, 27, 41, 45, 47}
+{24, 32, 34, 40, 48, 50}
+{
+[Tanker_0 24 Tanker_1]
+[Tanker_0 25 Tanker_1]
+[Tanker_1 34 Tanker_2]
+[Tanker_1 32 Tanker_3]
+[Tanker_2 21 Tanker_0]
+[Tanker_2 27 Tanker_7]
+[Tanker_3 27 Tanker_0]
+[Tanker_3 21 Tanker_8]
+[Tanker_0 40 Tanker_4]
+[Tanker_0 45 Tanker_4]
+[Tanker_4 50 Tanker_5]
+[Tanker_4 48 Tanker_6]
+[Tanker_5 41 Tanker_0]
+[Tanker_5 47 Tanker_9]
+[Tanker_6 47 Tanker_0]
+[Tanker_6 41 Tanker_10]
+}
+
+
+Autopilot
+{01, 03, 05, 13, 29}
+{}
+{
+[00_Standby  01 00_Standby]
+[03_EL       05 03_EL]
+[04_RTL      03 04_RTL]
+[00_Standby  05 03_EL]
+[00_Standby  03 04_RTL]
+[03_EL       03 04_RTL]
+[04_RTL      01 00_Standby]
+[04_RTL      05 03_EL]
+[00_Standby  13 RV_00]
+[RV_01       01 00_Standby]
+[RV_01       03 04_RTL]
+[RV_01       05 03_EL]
+[RV_07       01 00_Standby]
+[RV_07       03 04_RTL]
+[RV_07       05 03_EL]
+[RV_04       29 Ref_00]
+[Ref_00      01 00_Standby]
+[Ref_00      03 04_RTL]
+[Ref_00      05 03_EL]
+[Ref_08      01 00_Standby]
+[Ref_08      03 04_RTL]
+[Ref_08      05 03_EL]
+[Ref_05      01 00_Standby]
+[Ref_05      03 04_RTL]
+[Ref_05      05 03_EL]
+}
+
+
+01_Rendezvous
+{15, 17, 19, 21, 23, 25, 27}
+{24, 26, 28, 30}
+{
+[RV_00 15 RV_01]
+[RV_01 19 RV_02]
+[RV_01 17 RV_01]
+[RV_02 26 RV_01]
+[RV_02 24 RV_03]
+[RV_03 27 RV_04]
+[RV_03 21 RV_05]
+[RV_05 28 RV_06]
+[RV_05 30 RV_07]
+[RV_06 25 RV_03]
+[RV_06 23 RV_07]
+}
+
+02_Refueling
+{31, 33, 35, 37, 39, 41, 43, 45, 47}
+{36, 38, 40, 42, 44, 46 }
+{
+[Ref_00 31 Ref_00]
+[Ref_00 33 Ref_01]
+[Ref_01 38 Ref_00]
+[Ref_01 36 Ref_02]
+[Ref_02 37 Ref_02]
+[Ref_02 35 Ref_00]
+[Ref_02 39 Ref_03]
+[Ref_03 42 Ref_02]
+[Ref_03 40 Ref_04]
+[Ref_04 41 Ref_06]
+[Ref_04 47 Ref_05]
+[Ref_06 44 Ref_07]
+[Ref_07 45 Ref_04]
+[Ref_07 43 Ref_08]
+[Ref_06 46 Ref_08]
+}
+
+09_Other
+{}
+{52, 54, 56}
+{
+[Other_0 54 Other_1]
+[Other_0 52 Other_2]
+[Other_1 56 Other_0]
+[Other_1 52 Other_2]
+}
+
+08_Propulsion
+{}
+{20, 22, 58}
+{
+[Prop_0 20 Prop_1]
+[Prop_0 22 Prop_2]
+[Prop_1 22 Prop_2]
+[Prop_1 58 Prop_3]
+[Prop_3 22 Prop_2]
+}
+
+07_AAR_Equipment
+{33, 39}
+{02, 04, 06, 36, 38, 40, 42}
+{
+[Equip_0 39 Equip_1]
+[Equip_1 40 Equip_0]
+[Equip_1 42 Equip_0]
+[Equip_1 04 Equip_2]
+[Equip_1 06 Equip_2]
+[Equip_2 42 Equip_0]
+[Equip_0 33 Equip_3]
+[Equip_3 36 Equip_0]
+[Equip_3 38 Equip_0]
+[Equip_3 02 Equip_4]
+[Equip_4 38 Equip_4]
+[Equip_4 39 Equip_4]
+[Equip_4 33 Equip_4]
+}
+
+06_Datalink
+{}
+{08, 10, 12}
+{
+[Datalink_0 10 Datalink_1]
+[Datalink_1 12 Datalink_0]
+[Datalink_0 08 Datalink_2]
+[Datalink_1 08 Datalink_2]
+}
+
+05_Guidance
+{}
+{14, 16, 18}
+{
+[Guidance_0 16 Guidance_1]
+[Guidance_1 18 Guidance_0]
+[Guidance_1 14 Guidance_2]
+[Guidance_0 14 Guidance_2]
+}
+
+Spec_0
+{01, 13}
+{02, 08, 14, 20, 22}
+{
+[Spec_0_0 01 Spec_0_0]
+[Spec_0_0 13 Spec_0_0]
+[Spec_0_0 02 Spec_0_1]
+[Spec_0_0 08 Spec_0_1]
+[Spec_0_0 14 Spec_0_1]
+[Spec_0_0 20 Spec_0_1]
+[Spec_0_0 22 Spec_0_1]
+[Spec_0_1 02 Spec_0_1]
+[Spec_0_1 08 Spec_0_1]
+[Spec_0_1 14 Spec_0_1]
+[Spec_0_1 20 Spec_0_1]
+[Spec_0_1 22 Spec_0_1]
+[Spec_0_1 01 Spec_0_2]
+[Spec_0_1 13 Spec_0_2]
+}
+
+Spec_1
+{03}
+{14, 22}
+{
+[Spec_1_0 03 Spec_1_0]
+[Spec_1_0 14 Spec_1_1]
+[Spec_1_0 22 Spec_1_1]
+[Spec_1_1 14 Spec_1_1]
+[Spec_1_1 22 Spec_1_1]
+[Spec_1_1 03 Spec_1_2]
+}
+
+Spec_2
+{17, 19, 25}
+{08, 14, 20, 22}
+{
+[Spec_2_0 17 Spec_2_0]
+[Spec_2_0 19 Spec_2_0]
+[Spec_2_0 25 Spec_2_0]
+[Spec_2_0 08 Spec_2_1]
+[Spec_2_0 14 Spec_2_1]
+[Spec_2_0 20 Spec_2_1]
+[Spec_2_0 22 Spec_2_1]
+[Spec_2_1 08 Spec_2_1]
+[Spec_2_1 14 Spec_2_1]
+[Spec_2_1 20 Spec_2_1]
+[Spec_2_1 22 Spec_2_1]
+[Spec_2_1 17 Spec_2_2]
+[Spec_2_1 19 Spec_2_2]
+[Spec_2_1 25 Spec_2_2]
+}
+
+Spec_3
+{31, 33, 37, 39, 45}
+{02, 08, 14, 22, 58}
+{
+[Spec_3_0 31 Spec_3_0]
+[Spec_3_0 33 Spec_3_0]
+[Spec_3_0 37 Spec_3_0]
+[Spec_3_0 39 Spec_3_0]
+[Spec_3_0 45 Spec_3_0]
+[Spec_3_0 02 Spec_3_1]
+[Spec_3_0 08 Spec_3_1]
+[Spec_3_0 14 Spec_3_1]
+[Spec_3_0 58 Spec_3_1]
+[Spec_3_0 22 Spec_3_1]
+[Spec_3_1 02 Spec_3_1]
+[Spec_3_1 08 Spec_3_1]
+[Spec_3_1 14 Spec_3_1]
+[Spec_3_1 58 Spec_3_1]
+[Spec_3_1 22 Spec_3_1]
+[Spec_3_1 31 Spec_3_2]
+[Spec_3_1 33 Spec_3_2]
+[Spec_3_1 37 Spec_3_2]
+[Spec_3_1 39 Spec_3_2]
+[Spec_3_1 45 Spec_3_2]
+}
+
+Spec_4
+{13, 19, 31, 33, 37, 39, 45}
+{16, 18}
+{
+[Spec_4_0 13 Spec_4_0]
+[Spec_4_0 19 Spec_4_0]
+[Spec_4_0 31 Spec_4_0]
+[Spec_4_0 33 Spec_4_0]
+[Spec_4_0 37 Spec_4_0]
+[Spec_4_0 39 Spec_4_0]
+[Spec_4_0 45 Spec_4_0]
+[Spec_4_0 16 Spec_4_1]
+[Spec_4_1 18 Spec_4_0]
+[Spec_4_1 13 Spec_4_2]
+[Spec_4_1 19 Spec_4_2]
+[Spec_4_1 31 Spec_4_2]
+[Spec_4_1 33 Spec_4_2]
+[Spec_4_1 37 Spec_4_2]
+[Spec_4_1 39 Spec_4_2]
+[Spec_4_1 45 Spec_4_2]
+}
+
+Spec_5
+{31, 33, 37, 39, 45}
+{10, 12}
+{
+[Spec_5_0 31 Spec_5_0]
+[Spec_5_0 33 Spec_5_0]
+[Spec_5_0 37 Spec_5_0]
+[Spec_5_0 39 Spec_5_0]
+[Spec_5_0 45 Spec_5_0]
+[Spec_5_0 10 Spec_5_1]
+[Spec_5_1 12 Spec_5_0]
+[Spec_5_1 31 Spec_5_2]
+[Spec_5_1 33 Spec_5_2]
+[Spec_5_1 37 Spec_5_2]
+[Spec_5_1 39 Spec_5_2]
+[Spec_5_1 45 Spec_5_2]
+}
+
+Spec_6
+{01, 03, 05, 07, 09, 11, 13, 17, 19, 31, 33, 37, 39, 45}
+{}
+{
+[Spec_6_0 01 Spec_6_0]
+[Spec_6_0 03 Spec_6_0]
+[Spec_6_0 05 Spec_6_0]
+[Spec_6_0 13 Spec_6_0]
+[Spec_6_0 17 Spec_6_0]
+[Spec_6_0 19 Spec_6_0]
+[Spec_6_0 31 Spec_6_0]
+[Spec_6_0 33 Spec_6_0]
+[Spec_6_0 37 Spec_6_0]
+[Spec_6_0 39 Spec_6_0]
+[Spec_6_0 45 Spec_6_0]
+[Spec_6_0 07 Spec_6_1]
+[Spec_6_0 09 Spec_6_1]
+[Spec_6_0 11 Spec_6_1]
+[Spec_6_1 01 Spec_6_0]
+[Spec_6_1 03 Spec_6_0]
+[Spec_6_1 05 Spec_6_0]
+[Spec_6_1 13 Spec_6_2]
+[Spec_6_1 17 Spec_6_2]
+[Spec_6_1 19 Spec_6_2]
+[Spec_6_1 31 Spec_6_2]
+[Spec_6_1 33 Spec_6_2]
+[Spec_6_1 37 Spec_6_2]
+[Spec_6_1 39 Spec_6_2]
+[Spec_6_1 45 Spec_6_2]
+}
+
+Spec_7
+{01, 13, 17, 19, 25, 31, 33, 37, 39, 45}
+{52, 54, 56}
+{
+[Spec_7_0 01 Spec_7_0]
+[Spec_7_0 13 Spec_7_0]
+[Spec_7_0 17 Spec_7_0]
+[Spec_7_0 19 Spec_7_0]
+[Spec_7_0 25 Spec_7_0]
+[Spec_7_0 31 Spec_7_0]
+[Spec_7_0 33 Spec_7_0]
+[Spec_7_0 37 Spec_7_0]
+[Spec_7_0 39 Spec_7_0]
+[Spec_7_0 45 Spec_7_0]
+[Spec_7_0 52 Spec_7_1]
+[Spec_7_0 54 Spec_7_2]
+[Spec_7_2 56 Spec_7_0]
+[Spec_7_1 01 Spec_7_1]
+[Spec_7_2 01 Spec_7_2]
+[Spec_7_2 17 Spec_7_2]
+[Spec_7_2 31 Spec_7_2]
+[Spec_7_2 37 Spec_7_2]
+[Spec_7_2 52 Spec_7_1]
+[Spec_7_2 13 Spec_7_3]
+[Spec_7_2 19 Spec_7_3]
+[Spec_7_2 25 Spec_7_3]
+[Spec_7_2 33 Spec_7_3]
+[Spec_7_2 39 Spec_7_3]
+[Spec_7_2 45 Spec_7_3]
+[Spec_7_1 13 Spec_7_3]
+[Spec_7_1 17 Spec_7_3]
+[Spec_7_1 19 Spec_7_3]
+[Spec_7_1 25 Spec_7_3]
+[Spec_7_1 31 Spec_7_3]
+[Spec_7_1 33 Spec_7_3]
+[Spec_7_1 37 Spec_7_3]
+[Spec_7_1 39 Spec_7_3]
+[Spec_7_1 45 Spec_7_3]
+}
+
+Spec_8
+{37, 39}
+{04, 06, 36, 42}
+{
+[Spec_8_0 36 Spec_8_0]
+[Spec_8_0 37 Spec_8_0]
+[Spec_8_0 39 Spec_8_0]
+[Spec_8_0 42 Spec_8_0]
+[Spec_8_0 04 Spec_8_1]
+[Spec_8_0 06 Spec_8_1]
+[Spec_8_1 04 Spec_8_1]
+[Spec_8_1 06 Spec_8_1]
+[Spec_8_1 36 Spec_8_1]
+[Spec_8_1 42 Spec_8_2]
+[Spec_8_2 04 Spec_8_2]
+[Spec_8_2 06 Spec_8_2]
+[Spec_8_2 42 Spec_8_2]
+[Spec_8_2 36 Spec_8_0]
+[Spec_8_2 37 Spec_8_3]
+[Spec_8_2 39 Spec_8_3]
+}
+
+{00_Standby, Other_0, Prop_0, Equip_0, Datalink_0, Guidance_0, Pilot_0, Tanker_0, Spec_0_0, Spec_1_0, Spec_2_0, Spec_3_0, Spec_4_0, Spec_5_0, Spec_6_0, Spec_7_0, Spec_8_0}
+{{00_Standby, 03_EL, 04_RTL, Other_0, Other_1, Other_2, Prop_0, Prop_1, Prop_2, Prop_3, Equip_0, Equip_4, Datalink_0, Datalink_1, Datalink_2, Guidance_0, Guidance_1, Guidance_2, Pilot_0, Tanker_0, Spec_0_0, Spec_0_1, Spec_1_0, Spec_1_1, Spec_2_0, Spec_2_1, Spec_3_0, Spec_3_1, Spec_4_0, Spec_4_1, Spec_5_0, Spec_5_1, Spec_6_0, Spec_6_1, Spec_7_0, Spec_7_1, Spec_7_2, Spec_8_0, Spec_8_2}}
+{}
