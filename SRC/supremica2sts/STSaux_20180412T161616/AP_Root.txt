@@ -1,0 +1,30 @@
+{MCE01,MCE02,MCE03,MCE04,MCE06,MCE13}
+{ATE01,ATE07,ATE17}
+{
+[EL MCE02 RTL]
+[EL MCE01 EL]
+[EL MCE03 Standby]
+[Joining MCE06 Refueling]
+[Joining ATE01 Standby]
+[Joining MCE03 Standby]
+[Joining MCE02 RTL]
+[Joining MCE01 EL]
+[RTL MCE01 EL]
+[RTL MCE03 Standby]
+[RTL MCE02 RTL]
+[Reforming MCE03 Standby]
+[Reforming MCE02 RTL]
+[Reforming MCE01 EL]
+[Reforming ATE17 Refueling]
+[Refueling MCE13 Reforming]
+[Refueling MCE03 Standby]
+[Refueling MCE02 RTL]
+[Refueling MCE01 EL]
+[Refueling ATE07 Joining]
+[Refueling MCE06 Refueling]
+[Standby MCE04 Joining]
+[Standby MCE02 RTL]
+[Standby MCE03 Standby]
+[Standby MCE01 EL]
+}
+{EL,Joining,RTL,Reforming,Refueling,Standby}

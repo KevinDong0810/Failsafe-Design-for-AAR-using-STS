@@ -1,0 +1,32 @@
+{MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12}
+{SFE18,SFE19,SFE20}
+{
+[Spec_TankerSafety_01 SFE18 Spec_TankerSafety_02]
+[Spec_TankerSafety_01 MCE03 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE04 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE05 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE06 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE07 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE08 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE10 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE12 Spec_TankerSafety_01]
+[Spec_TankerSafety_02 SFE19 Spec_TankerSafety_01]
+[Spec_TankerSafety_02 SFE20 Spec_TankerSafety_03]
+[Spec_TankerSafety_02 MCE03 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE05 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE06 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE07 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE12 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE04 Spec_TankerSafety_99]
+[Spec_TankerSafety_02 MCE08 Spec_TankerSafety_99]
+[Spec_TankerSafety_02 MCE10 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE03 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE04 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE05 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE06 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE07 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE08 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE10 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE12 Spec_TankerSafety_99]
+}
+{Spec_TankerSafety_01,Spec_TankerSafety_02,Spec_TankerSafety_03,Spec_TankerSafety_99}

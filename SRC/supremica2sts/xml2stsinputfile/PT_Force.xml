@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Automata name="Untitled" major="0" minor="9">
+<Automaton name="PT:Force" type="Plant">
+	<Events>
+		<Event id="0" label="MCE08:Ref_Cap"/>
+		<Event id="1" label="MCE09:Ref_Cap_Forced"/>
+		<Event id="2" label="MCE10:Ref_Transfer"/>
+		<Event id="3" label="MCE11:Ref_Transfer_Forced"/>
+		<Event id="4" label="MIE04:Force_Ref_Cap"/>
+		<Event id="5" label="MIE05:Force_Ref_Transfer"/>
+	</Events>
+	<States>
+		<State id="0" name="Force_01" initial="true" accepting="true"/>
+		<State id="1" name="Force_02" accepting="true"/>
+		<State id="2" name="Force_03" accepting="true"/>
+	</States>
+	<Transitions>
+		<Transition source="0" dest="1" event="4"/>
+		<Transition source="0" dest="2" event="5"/>
+		<Transition source="0" dest="0" event="0"/>
+		<Transition source="0" dest="0" event="2"/>
+		<Transition source="1" dest="0" event="1"/>
+		<Transition source="1" dest="0" event="0"/>
+		<Transition source="2" dest="0" event="3"/>
+		<Transition source="2" dest="0" event="2"/>
+	</Transitions>
+</Automaton>
+</Automata>

@@ -1,0 +1,516 @@
+root = Root
+{
+Root = AND {Receiver, Pilot, Specification}
+Receiver = AND {Autopilot, Subsystem}
+Autopilot = OR {01_Standby, 02_RTL, 03_EL, 04_Joining, 05_Refueling, 06_Reforming}
+04_Joining = OR {Joining_01, Joining_02, Joining_03, Joining_04, Joining_05, Joining_06}
+05_Refueling = OR {Ref_01, Ref_02, Ref_03, Ref_04, Ref_05, Ref_06, Ref_07, Ref_08, Ref_09}
+06_Reforming = OR {Reforming_01, Reforming_02, Reforming_03, Reforming_04}
+Subsystem = AND {01_Navigation, 02_Control, 03_Fuel, 04_Engine, 05_Dro_pro, 06_Datalink, 07_TankerSafety}
+01_Navigation = OR {Navi_01, Navi_02, Navi_03}
+02_Control = OR {Control_01,Control_02,Control_03}
+03_Fuel = OR {Fuel_01, Fuel_02, Fuel_03}
+04_Engine = OR {Engine_01, Engine_02, Engine_03}
+05_Dro_pro = OR {Dro_pro_01,Dro_pro_02,Dro_pro_03}
+06_Datalink = OR {Datalink_01,Datalink_02,Datalink_03}
+07_TankerSafety = OR {TankerSafety_01,TankerSafety_02,TankerSafety_03}
+Pilot = AND {Force, Withdrawal}
+Force = OR {Force_01,Force_02,Force_03}
+Withdrawal = OR {Withdrawal_01,Withdrawal_02,Withdrawal_03,Withdrawal_04}
+Specification = AND {Spec_Navi, Spec_Control, Spec_Fuel, Spec_Engine, Spec_Dro_pro, Spec_Datalink, Spec_TankerSafety, Spec_Pilot} 
+Spec_Navi = OR {Spec_Navi_01,Spec_Navi_02,Spec_Navi_03,Spec_Navi_99}
+Spec_Control = OR {Spec_Control_01,Spec_Control_02,Spec_Control_03,Spec_Control_99}
+Spec_Fuel = OR {Spec_Fuel_01,Spec_Fuel_02,Spec_Fuel_03,Spec_Fuel_99}
+Spec_Engine = OR {Spec_Engine_01,Spec_Engine_02,Spec_Engine_03,Spec_Engine_99}
+Spec_Dro_pro = OR {Spec_Dro_pro_01,Spec_Dro_pro_02,Spec_Dro_pro_03,Spec_Dro_pro_99}
+Spec_Datalink = OR {Spec_Datalink_01,Spec_Datalink_02,Spec_Datalink_03,Spec_Datalink_99}
+Spec_TankerSafety = OR {Spec_TankerSafety_01,Spec_TankerSafety_02,Spec_TankerSafety_03,Spec_TankerSafety_99}
+Spec_Pilot = OR {Spec_Pilot_01,Spec_Pilot_02,Spec_Pilot_99}
+}
+
+Autopilot
+{MCE01,MCE02,MCE03,MCE04,MCE06,MCE13}
+{ATE01,ATE07,ATE17}
+{
+[01_Standby MCE04 Joining_01]
+[01_Standby MCE02 02_RTL]
+[01_Standby MCE03 01_Standby]
+[01_Standby MCE01 03_EL]
+[02_RTL MCE01 03_EL]
+[02_RTL MCE03 01_Standby]
+[02_RTL MCE02 02_RTL]
+[03_EL MCE02 02_RTL]
+[03_EL MCE01 03_EL]
+[03_EL MCE03 01_Standby]
+[Joining_01 ATE01 01_Standby]
+[Joining_06 MCE06 Ref_01]
+[Ref_01 ATE07 Joining_06]
+[Ref_09 MCE13 Reforming_01]
+[Reforming_01 ATE17 Ref_09]
+[Joining_04 MCE03 01_Standby]
+[Joining_04 MCE02 02_RTL]
+[Joining_04 MCE01 03_EL]
+[Joining_05 MCE03 01_Standby]
+[Joining_05 MCE02 02_RTL]
+[Joining_05 MCE01 03_EL]
+[Joining_06 MCE03 01_Standby]
+[Joining_06 MCE02 02_RTL]
+[Joining_06 MCE01 03_EL]
+[Ref_02 MCE03 01_Standby]
+[Ref_02 MCE02 02_RTL]
+[Ref_02 MCE01 03_EL]
+[Ref_04 MCE03 01_Standby]
+[Ref_04 MCE02 02_RTL]
+[Ref_04 MCE01 03_EL]
+[Ref_08 MCE03 01_Standby]
+[Ref_08 MCE02 02_RTL]
+[Ref_08 MCE01 03_EL]
+[Ref_09 MCE03 01_Standby]
+[Ref_09 MCE02 02_RTL]
+[Ref_09 MCE01 03_EL]
+[Reforming_04 MCE03 01_Standby]
+[Reforming_04 MCE02 02_RTL]
+[Reforming_04 MCE01 03_EL]
+[Reforming_02 MCE03 01_Standby]
+[Reforming_02 MCE02 02_RTL]
+[Reforming_02 MCE01 03_EL]
+}
+
+04_Joining
+{MCE05}
+{ATE02,ATE03,ATE04,ATE05,ATE06}
+{
+[Joining_01 ATE02 Joining_02]
+[Joining_02 ATE04 Joining_06]
+[Joining_02 ATE03 Joining_03]
+[Joining_03 ATE06 Joining_04]
+[Joining_03 ATE05 Joining_05]
+[Joining_05 MCE05 Joining_02]
+[Joining_06 MCE05 Joining_02]
+}
+
+05_Refueling
+{MCE07,MCE08,MCE09,MCE10,MCE11,MCE12}
+{ATE08,ATE09,ATE10,ATE11,ATE12,ATE13,ATE14,ATE15,ATE16}
+{
+[Ref_01 ATE08 Ref_02]
+[Ref_02 MCE08 Ref_03]
+[Ref_02 MCE09 Ref_03]
+[Ref_02 MCE07 Ref_01]
+[Ref_03 ATE09 Ref_02]
+[Ref_03 ATE10 Ref_04]
+[Ref_04 MCE10 Ref_05]
+[Ref_04 MCE11 Ref_05]
+[Ref_04 MCE07 Ref_01]
+[Ref_05 ATE11 Ref_04]
+[Ref_05 ATE12 Ref_06]
+[Ref_06 ATE14 Ref_09]
+[Ref_06 ATE13 Ref_07]
+[Ref_07 ATE16 Ref_09]
+[Ref_07 ATE15 Ref_08]
+[Ref_08 MCE12 Ref_06]
+}
+
+06_Reforming
+{MCE14}
+{ATE18,ATE19,ATE20}
+{
+[Reforming_01 ATE18 Reforming_02]
+[Reforming_02 MCE14 Reforming_03]
+[Reforming_03 ATE20 Reforming_04]
+[Reforming_03 ATE19 Reforming_02]
+}
+
+01_Navigation
+{}
+{SFE01,SFE02,SFE03}
+{
+[Navi_01 SFE01 Navi_02]
+[Navi_02 SFE02 Navi_01]
+[Navi_02 SFE03 Navi_03]
+}
+
+02_Control
+{}
+{SFE04,SFE05,SFE06}
+{
+[Control_01 SFE04 Control_02]
+[Control_02 SFE05 Control_01]
+[Control_02 SFE06 Control_03]
+}
+
+03_Fuel
+{}
+{SFE07,SFE08}
+{
+[Fuel_01 SFE07 Fuel_02]
+[Fuel_02 SFE08 Fuel_03]
+}
+
+04_Engine
+{}
+{SFE09,SFE10,SFE11}
+{
+[Engine_01 SFE09 Engine_02]
+[Engine_02 SFE10 Engine_01]
+[Engine_02 SFE11 Engine_03]
+}
+
+05_Dro_pro
+{}
+{SFE12,SFE13,SFE14}
+{
+[Dro_pro_01 SFE12 Dro_pro_02]
+[Dro_pro_02 SFE13 Dro_pro_01]
+[Dro_pro_02 SFE14 Dro_pro_03]
+}
+
+06_Datalink
+{}
+{SFE15,SFE16,SFE17}
+{
+[Datalink_01 SFE15 Datalink_02]
+[Datalink_02 SFE16 Datalink_01]
+[Datalink_02 SFE17 Datalink_03]
+}
+
+07_TankerSafety
+{}
+{SFE18,SFE19,SFE20}
+{
+[TankerSafety_01 SFE18 TankerSafety_02]
+[TankerSafety_02 SFE19 TankerSafety_01]
+[TankerSafety_02 SFE20 TankerSafety_03]
+}
+
+Force
+{MCE08,MCE09,MCE10,MCE11,MIE04,MIE05}
+{}
+{
+[Force_01 MIE04 Force_02]
+[Force_01 MIE05 Force_03]
+[Force_01 MCE08 Force_01]
+[Force_01 MCE10 Force_01]
+[Force_02 MCE09 Force_01]
+[Force_02 MCE08 Force_01]
+[Force_03 MCE11 Force_01]
+[Force_03 MCE10 Force_01]
+}
+
+Withdrawal
+{MCE01,MCE02,MCE03,MIE01,MIE02,MIE03}
+{}
+{
+[Withdrawal_01 MIE03 Withdrawal_02]
+[Withdrawal_01 MIE02 Withdrawal_03]
+[Withdrawal_01 MIE01 Withdrawal_04]
+[Withdrawal_01 MCE03 Withdrawal_01]
+[Withdrawal_01 MCE02 Withdrawal_01]
+[Withdrawal_01 MCE01 Withdrawal_01]
+[Withdrawal_02 MCE03 Withdrawal_01]
+[Withdrawal_02 MCE02 Withdrawal_01]
+[Withdrawal_02 MCE01 Withdrawal_01]
+[Withdrawal_03 MCE02 Withdrawal_01]
+[Withdrawal_03 MCE01 Withdrawal_01]
+[Withdrawal_04 MCE01 Withdrawal_01]
+}
+
+Spec_Navi
+{MCE02,MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14}
+{SFE01,SFE02,SFE03}
+{
+[Spec_Navi_01 SFE01 Spec_Navi_02]
+[Spec_Navi_01 MCE02 Spec_Navi_01]
+[Spec_Navi_01 MCE03 Spec_Navi_01]
+[Spec_Navi_01 MCE04 Spec_Navi_01]
+[Spec_Navi_01 MCE05 Spec_Navi_01]
+[Spec_Navi_01 MCE06 Spec_Navi_01]
+[Spec_Navi_01 MCE07 Spec_Navi_01]
+[Spec_Navi_01 MCE08 Spec_Navi_01]
+[Spec_Navi_01 MCE10 Spec_Navi_01]
+[Spec_Navi_01 MCE12 Spec_Navi_01]
+[Spec_Navi_01 MCE13 Spec_Navi_01]
+[Spec_Navi_01 MCE14 Spec_Navi_01]
+[Spec_Navi_02 SFE02 Spec_Navi_01]
+[Spec_Navi_02 SFE03 Spec_Navi_03]
+[Spec_Navi_02 MCE02 Spec_Navi_02]
+[Spec_Navi_02 MCE03 Spec_Navi_02]
+[Spec_Navi_02 MCE05 Spec_Navi_02]
+[Spec_Navi_02 MCE06 Spec_Navi_02]
+[Spec_Navi_02 MCE07 Spec_Navi_02]
+[Spec_Navi_02 MCE12 Spec_Navi_02]
+[Spec_Navi_02 MCE13 Spec_Navi_02]
+[Spec_Navi_02 MCE14 Spec_Navi_02]
+[Spec_Navi_02 MCE04 Spec_Navi_99]
+[Spec_Navi_02 MCE08 Spec_Navi_99]
+[Spec_Navi_02 MCE10 Spec_Navi_99]
+[Spec_Navi_03 MCE02 Spec_Navi_99]
+[Spec_Navi_03 MCE03 Spec_Navi_99]
+[Spec_Navi_03 MCE04 Spec_Navi_99]
+[Spec_Navi_03 MCE05 Spec_Navi_99]
+[Spec_Navi_03 MCE06 Spec_Navi_99]
+[Spec_Navi_03 MCE07 Spec_Navi_99]
+[Spec_Navi_03 MCE08 Spec_Navi_99]
+[Spec_Navi_03 MCE10 Spec_Navi_99]
+[Spec_Navi_03 MCE12 Spec_Navi_99]
+[Spec_Navi_03 MCE13 Spec_Navi_99]
+[Spec_Navi_03 MCE14 Spec_Navi_99]
+}
+
+Spec_Control
+{MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14}
+{SFE04,SFE05,SFE06}
+{
+[Spec_Control_01 SFE04 Spec_Control_02]
+[Spec_Control_01 MCE03 Spec_Control_01]
+[Spec_Control_01 MCE04 Spec_Control_01]
+[Spec_Control_01 MCE05 Spec_Control_01]
+[Spec_Control_01 MCE06 Spec_Control_01]
+[Spec_Control_01 MCE07 Spec_Control_01]
+[Spec_Control_01 MCE08 Spec_Control_01]
+[Spec_Control_01 MCE10 Spec_Control_01]
+[Spec_Control_01 MCE12 Spec_Control_01]
+[Spec_Control_01 MCE13 Spec_Control_01]
+[Spec_Control_01 MCE14 Spec_Control_01]
+[Spec_Control_02 SFE05 Spec_Control_01]
+[Spec_Control_02 SFE06 Spec_Control_03]
+[Spec_Control_02 MCE03 Spec_Control_02]
+[Spec_Control_02 MCE05 Spec_Control_02]
+[Spec_Control_02 MCE13 Spec_Control_02]
+[Spec_Control_02 MCE14 Spec_Control_02]
+[Spec_Control_02 MCE04 Spec_Control_99]
+[Spec_Control_02 MCE06 Spec_Control_99]
+[Spec_Control_02 MCE07 Spec_Control_99]
+[Spec_Control_02 MCE08 Spec_Control_99]
+[Spec_Control_02 MCE10 Spec_Control_99]
+[Spec_Control_02 MCE12 Spec_Control_99]
+[Spec_Control_03 MCE03 Spec_Control_99]
+[Spec_Control_03 MCE04 Spec_Control_99]
+[Spec_Control_03 MCE05 Spec_Control_99]
+[Spec_Control_03 MCE06 Spec_Control_99]
+[Spec_Control_03 MCE07 Spec_Control_99]
+[Spec_Control_03 MCE08 Spec_Control_99]
+[Spec_Control_03 MCE10 Spec_Control_99]
+[Spec_Control_03 MCE12 Spec_Control_99]
+[Spec_Control_03 MCE13 Spec_Control_99]
+[Spec_Control_03 MCE14 Spec_Control_99]
+}
+
+Spec_Fuel
+{MCE02,MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14}
+{SFE07,SFE08}
+{
+[Spec_Fuel_01 SFE07 Spec_Fuel_02]
+[Spec_Fuel_01 MCE03 Spec_Fuel_01]
+[Spec_Fuel_01 MCE02 Spec_Fuel_01]
+[Spec_Fuel_01 MCE04 Spec_Fuel_01]
+[Spec_Fuel_01 MCE05 Spec_Fuel_01]
+[Spec_Fuel_01 MCE06 Spec_Fuel_01]
+[Spec_Fuel_01 MCE07 Spec_Fuel_01]
+[Spec_Fuel_01 MCE08 Spec_Fuel_01]
+[Spec_Fuel_01 MCE10 Spec_Fuel_01]
+[Spec_Fuel_01 MCE12 Spec_Fuel_01]
+[Spec_Fuel_01 MCE13 Spec_Fuel_01]
+[Spec_Fuel_01 MCE14 Spec_Fuel_01]
+[Spec_Fuel_02 SFE08 Spec_Fuel_03]
+[Spec_Fuel_02 MCE02 Spec_Fuel_02]
+[Spec_Fuel_02 MCE12 Spec_Fuel_02]
+[Spec_Fuel_02 MCE13 Spec_Fuel_02]
+[Spec_Fuel_02 MCE14 Spec_Fuel_02]
+[Spec_Fuel_02 MCE03 Spec_Fuel_99]
+[Spec_Fuel_02 MCE04 Spec_Fuel_99]
+[Spec_Fuel_02 MCE05 Spec_Fuel_99]
+[Spec_Fuel_02 MCE06 Spec_Fuel_99]
+[Spec_Fuel_02 MCE07 Spec_Fuel_99]
+[Spec_Fuel_02 MCE08 Spec_Fuel_99]
+[Spec_Fuel_02 MCE10 Spec_Fuel_99]
+[Spec_Fuel_03 MCE03 Spec_Fuel_99]
+[Spec_Fuel_03 MCE02 Spec_Fuel_99]
+[Spec_Fuel_03 MCE04 Spec_Fuel_99]
+[Spec_Fuel_03 MCE05 Spec_Fuel_99]
+[Spec_Fuel_03 MCE06 Spec_Fuel_99]
+[Spec_Fuel_03 MCE07 Spec_Fuel_99]
+[Spec_Fuel_03 MCE08 Spec_Fuel_99]
+[Spec_Fuel_03 MCE10 Spec_Fuel_99]
+[Spec_Fuel_03 MCE12 Spec_Fuel_99]
+[Spec_Fuel_03 MCE13 Spec_Fuel_99]
+[Spec_Fuel_03 MCE14 Spec_Fuel_99]
+}
+
+Spec_Engine
+{MCE02,MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14}
+{SFE09,SFE10,SFE11}
+{
+[Spec_Engine_01 SFE09 Spec_Engine_02]
+[Spec_Engine_01 MCE03 Spec_Engine_01]
+[Spec_Engine_01 MCE02 Spec_Engine_01]
+[Spec_Engine_01 MCE04 Spec_Engine_01]
+[Spec_Engine_01 MCE05 Spec_Engine_01]
+[Spec_Engine_01 MCE06 Spec_Engine_01]
+[Spec_Engine_01 MCE07 Spec_Engine_01]
+[Spec_Engine_01 MCE08 Spec_Engine_01]
+[Spec_Engine_01 MCE10 Spec_Engine_01]
+[Spec_Engine_01 MCE12 Spec_Engine_01]
+[Spec_Engine_01 MCE13 Spec_Engine_01]
+[Spec_Engine_01 MCE14 Spec_Engine_01]
+[Spec_Engine_02 SFE10 Spec_Engine_01]
+[Spec_Engine_02 SFE11 Spec_Engine_03]
+[Spec_Engine_02 MCE03 Spec_Engine_02]
+[Spec_Engine_02 MCE02 Spec_Engine_02]
+[Spec_Engine_02 MCE05 Spec_Engine_02]
+[Spec_Engine_02 MCE06 Spec_Engine_02]
+[Spec_Engine_02 MCE07 Spec_Engine_02]
+[Spec_Engine_02 MCE12 Spec_Engine_02]
+[Spec_Engine_02 MCE13 Spec_Engine_02]
+[Spec_Engine_02 MCE14 Spec_Engine_02]
+[Spec_Engine_02 MCE04 Spec_Engine_99]
+[Spec_Engine_02 MCE08 Spec_Engine_99]
+[Spec_Engine_02 MCE10 Spec_Engine_99]
+[Spec_Engine_03 MCE03 Spec_Engine_99]
+[Spec_Engine_03 MCE02 Spec_Engine_99]
+[Spec_Engine_03 MCE04 Spec_Engine_99]
+[Spec_Engine_03 MCE05 Spec_Engine_99]
+[Spec_Engine_03 MCE06 Spec_Engine_99]
+[Spec_Engine_03 MCE07 Spec_Engine_99]
+[Spec_Engine_03 MCE08 Spec_Engine_99]
+[Spec_Engine_03 MCE10 Spec_Engine_99]
+[Spec_Engine_03 MCE12 Spec_Engine_99]
+[Spec_Engine_03 MCE13 Spec_Engine_99]
+[Spec_Engine_03 MCE14 Spec_Engine_99]
+}
+
+Spec_Dro_pro
+{MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12}
+{SFE12,SFE13,SFE14}
+{
+[Spec_Dro_pro_01 SFE12 Spec_Dro_pro_02]
+[Spec_Dro_pro_01 MCE03 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE04 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE05 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE06 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE07 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE08 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE10 Spec_Dro_pro_01]
+[Spec_Dro_pro_01 MCE12 Spec_Dro_pro_01]
+[Spec_Dro_pro_02 SFE13 Spec_Dro_pro_01]
+[Spec_Dro_pro_02 SFE14 Spec_Dro_pro_03]
+[Spec_Dro_pro_02 MCE03 Spec_Dro_pro_02]
+[Spec_Dro_pro_02 MCE05 Spec_Dro_pro_02]
+[Spec_Dro_pro_02 MCE04 Spec_Dro_pro_99]
+[Spec_Dro_pro_02 MCE06 Spec_Dro_pro_99]
+[Spec_Dro_pro_02 MCE07 Spec_Dro_pro_99]
+[Spec_Dro_pro_02 MCE08 Spec_Dro_pro_99]
+[Spec_Dro_pro_02 MCE10 Spec_Dro_pro_99]
+[Spec_Dro_pro_02 MCE12 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE03 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE04 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE05 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE06 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE07 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE08 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE10 Spec_Dro_pro_99]
+[Spec_Dro_pro_03 MCE12 Spec_Dro_pro_99]
+}
+
+Spec_Datalink
+{MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12}
+{SFE15,SFE16,SFE17}
+{
+[Spec_Datalink_01 SFE15 Spec_Datalink_02]
+[Spec_Datalink_01 MCE03 Spec_Datalink_01]
+[Spec_Datalink_01 MCE04 Spec_Datalink_01]
+[Spec_Datalink_01 MCE05 Spec_Datalink_01]
+[Spec_Datalink_01 MCE06 Spec_Datalink_01]
+[Spec_Datalink_01 MCE07 Spec_Datalink_01]
+[Spec_Datalink_01 MCE08 Spec_Datalink_01]
+[Spec_Datalink_01 MCE10 Spec_Datalink_01]
+[Spec_Datalink_01 MCE12 Spec_Datalink_01]
+[Spec_Datalink_02 SFE16 Spec_Datalink_01]
+[Spec_Datalink_02 SFE17 Spec_Datalink_03]
+[Spec_Datalink_02 MCE03 Spec_Datalink_02]
+[Spec_Datalink_02 MCE05 Spec_Datalink_02]
+[Spec_Datalink_02 MCE06 Spec_Datalink_02]
+[Spec_Datalink_02 MCE07 Spec_Datalink_02]
+[Spec_Datalink_02 MCE12 Spec_Datalink_02]
+[Spec_Datalink_02 MCE04 Spec_Datalink_99]
+[Spec_Datalink_02 MCE08 Spec_Datalink_99]
+[Spec_Datalink_02 MCE10 Spec_Datalink_99]
+[Spec_Datalink_03 MCE03 Spec_Datalink_99]
+[Spec_Datalink_03 MCE04 Spec_Datalink_99]
+[Spec_Datalink_03 MCE05 Spec_Datalink_99]
+[Spec_Datalink_03 MCE06 Spec_Datalink_99]
+[Spec_Datalink_03 MCE07 Spec_Datalink_99]
+[Spec_Datalink_03 MCE08 Spec_Datalink_99]
+[Spec_Datalink_03 MCE10 Spec_Datalink_99]
+[Spec_Datalink_03 MCE12 Spec_Datalink_99]
+}
+
+Spec_TankerSafety
+{MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12}
+{SFE18,SFE19,SFE20}
+{
+[Spec_TankerSafety_01 SFE18 Spec_TankerSafety_02]
+[Spec_TankerSafety_01 MCE03 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE04 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE05 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE06 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE07 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE08 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE10 Spec_TankerSafety_01]
+[Spec_TankerSafety_01 MCE12 Spec_TankerSafety_01]
+[Spec_TankerSafety_02 SFE19 Spec_TankerSafety_01]
+[Spec_TankerSafety_02 SFE20 Spec_TankerSafety_03]
+[Spec_TankerSafety_02 MCE03 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE05 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE06 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE07 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE12 Spec_TankerSafety_02]
+[Spec_TankerSafety_02 MCE04 Spec_TankerSafety_99]
+[Spec_TankerSafety_02 MCE08 Spec_TankerSafety_99]
+[Spec_TankerSafety_02 MCE10 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE03 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE04 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE05 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE06 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE07 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE08 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE10 Spec_TankerSafety_99]
+[Spec_TankerSafety_03 MCE12 Spec_TankerSafety_99]
+}
+
+Spec_Pilot
+{MCE01,MCE02,MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14,MIE01,MIE02,MIE03}
+{}
+{
+[Spec_Pilot_01 MIE03 Spec_Pilot_02]
+[Spec_Pilot_01 MIE02 Spec_Pilot_02]
+[Spec_Pilot_01 MIE01 Spec_Pilot_02]
+[Spec_Pilot_01 MCE04 Spec_Pilot_01]
+[Spec_Pilot_01 MCE05 Spec_Pilot_01]
+[Spec_Pilot_01 MCE06 Spec_Pilot_01]
+[Spec_Pilot_01 MCE07 Spec_Pilot_01]
+[Spec_Pilot_01 MCE08 Spec_Pilot_01]
+[Spec_Pilot_01 MCE10 Spec_Pilot_01]
+[Spec_Pilot_01 MCE12 Spec_Pilot_01]
+[Spec_Pilot_01 MCE13 Spec_Pilot_01]
+[Spec_Pilot_01 MCE14 Spec_Pilot_01]
+[Spec_Pilot_01 MCE03 Spec_Pilot_01]
+[Spec_Pilot_01 MCE02 Spec_Pilot_01]
+[Spec_Pilot_01 MCE01 Spec_Pilot_01]
+[Spec_Pilot_02 MCE03 Spec_Pilot_01]
+[Spec_Pilot_02 MCE02 Spec_Pilot_01]
+[Spec_Pilot_02 MCE01 Spec_Pilot_01]
+[Spec_Pilot_02 MCE04 Spec_Pilot_99]
+[Spec_Pilot_02 MCE05 Spec_Pilot_99]
+[Spec_Pilot_02 MCE06 Spec_Pilot_99]
+[Spec_Pilot_02 MCE07 Spec_Pilot_99]
+[Spec_Pilot_02 MCE08 Spec_Pilot_99]
+[Spec_Pilot_02 MCE10 Spec_Pilot_99]
+[Spec_Pilot_02 MCE12 Spec_Pilot_99]
+[Spec_Pilot_02 MCE13 Spec_Pilot_99]
+[Spec_Pilot_02 MCE14 Spec_Pilot_99]
+}
+
+{01_Standby, Navi_01, Control_01, Fuel_01, Engine_01, Dro_pro_01, Datalink_01, TankerSafety_01, Force_01, Withdrawal_01, Spec_Navi_01, Spec_Control_01, Spec_Fuel_01, Spec_Engine_01, Spec_Dro_pro_01, Spec_Datalink_01, Spec_TankerSafety_01, Spec_Pilot_01}
+{{01_Standby, 02_RTL, 03_EL, Navi_01, Navi_03, Control_01, Control_03, Fuel_01, Fuel_03, Engine_01, Engine_03, Dro_pro_01, Dro_pro_03, Datalink_01, Datalink_03, TankerSafety_01, TankerSafety_03, Force_01, Force_02, Force_03, Withdrawal_01, Spec_Navi_01, Spec_Navi_03, Spec_Control_01, Spec_Control_03, Spec_Fuel_01, Spec_Fuel_03, Spec_Engine_01, Spec_Engine_03, Spec_Dro_pro_01, Spec_Dro_pro_03, Spec_Datalink_01, Spec_Datalink_03, Spec_TankerSafety_01, Spec_TankerSafety_03, Spec_Pilot_01, Spec_Pilot_03}}
+{}

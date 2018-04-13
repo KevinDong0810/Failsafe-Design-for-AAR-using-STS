@@ -1,0 +1,7 @@
+{}
+{SFE07,SFE08}
+{
+[Fuel_01 SFE07 Fuel_02]
+[Fuel_02 SFE08 Fuel_03]
+}
+{Fuel_01,Fuel_02,Fuel_03}

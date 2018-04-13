@@ -1,0 +1,8 @@
+{}
+{SFE01,SFE02,SFE03}
+{
+[Navi_01 SFE01 Navi_02]
+[Navi_02 SFE02 Navi_01]
+[Navi_02 SFE03 Navi_03]
+}
+{Navi_01,Navi_02,Navi_03}

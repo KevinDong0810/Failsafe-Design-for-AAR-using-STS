@@ -1,0 +1,32 @@
+{MCE01,MCE02,MCE03,MCE04,MCE05,MCE06,MCE07,MCE08,MCE10,MCE12,MCE13,MCE14,MIE01,MIE02,MIE03}
+{}
+{
+[Spec_Pilot_01 MIE03 Spec_Pilot_02]
+[Spec_Pilot_01 MIE02 Spec_Pilot_02]
+[Spec_Pilot_01 MIE01 Spec_Pilot_02]
+[Spec_Pilot_01 MCE04 Spec_Pilot_01]
+[Spec_Pilot_01 MCE05 Spec_Pilot_01]
+[Spec_Pilot_01 MCE06 Spec_Pilot_01]
+[Spec_Pilot_01 MCE07 Spec_Pilot_01]
+[Spec_Pilot_01 MCE08 Spec_Pilot_01]
+[Spec_Pilot_01 MCE10 Spec_Pilot_01]
+[Spec_Pilot_01 MCE12 Spec_Pilot_01]
+[Spec_Pilot_01 MCE13 Spec_Pilot_01]
+[Spec_Pilot_01 MCE14 Spec_Pilot_01]
+[Spec_Pilot_01 MCE03 Spec_Pilot_01]
+[Spec_Pilot_01 MCE02 Spec_Pilot_01]
+[Spec_Pilot_01 MCE01 Spec_Pilot_01]
+[Spec_Pilot_02 MCE03 Spec_Pilot_01]
+[Spec_Pilot_02 MCE02 Spec_Pilot_01]
+[Spec_Pilot_02 MCE01 Spec_Pilot_01]
+[Spec_Pilot_02 MCE04 Spec_Pilot_99]
+[Spec_Pilot_02 MCE05 Spec_Pilot_99]
+[Spec_Pilot_02 MCE06 Spec_Pilot_99]
+[Spec_Pilot_02 MCE07 Spec_Pilot_99]
+[Spec_Pilot_02 MCE08 Spec_Pilot_99]
+[Spec_Pilot_02 MCE10 Spec_Pilot_99]
+[Spec_Pilot_02 MCE12 Spec_Pilot_99]
+[Spec_Pilot_02 MCE13 Spec_Pilot_99]
+[Spec_Pilot_02 MCE14 Spec_Pilot_99]
+}
+{Spec_Pilot_01,Spec_Pilot_02,Spec_Pilot_99}

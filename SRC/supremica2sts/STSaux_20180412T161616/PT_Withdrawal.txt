@@ -1,0 +1,17 @@
+{MCE01,MCE02,MCE03,MIE01,MIE02,MIE03}
+{}
+{
+[Withdrawal_01 MIE03 Withdrawal_02]
+[Withdrawal_01 MIE02 Withdrawal_03]
+[Withdrawal_01 MIE01 Withdrawal_04]
+[Withdrawal_01 MCE03 Withdrawal_01]
+[Withdrawal_01 MCE02 Withdrawal_01]
+[Withdrawal_01 MCE01 Withdrawal_01]
+[Withdrawal_02 MCE03 Withdrawal_01]
+[Withdrawal_02 MCE02 Withdrawal_01]
+[Withdrawal_02 MCE01 Withdrawal_01]
+[Withdrawal_03 MCE02 Withdrawal_01]
+[Withdrawal_03 MCE01 Withdrawal_01]
+[Withdrawal_04 MCE01 Withdrawal_01]
+}
+{Withdrawal_01,Withdrawal_02,Withdrawal_03,Withdrawal_04}

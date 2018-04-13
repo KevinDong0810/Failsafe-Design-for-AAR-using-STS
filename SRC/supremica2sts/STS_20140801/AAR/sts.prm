@@ -1,0 +1,7 @@
+STS Procedure{
+Proc name: Supcon;
+Input Format: STS;
+Plant: ROOT;
+SPEC: SPEC;
+DES: SUPER;
+}

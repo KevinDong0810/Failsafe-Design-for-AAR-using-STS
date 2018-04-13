@@ -1,0 +1,32 @@
+{MCE01,MCE02,MCE03,MCE04,MCE05,MCE06}
+{ATE01,ATE02,ATE03,ATE04,ATE05,ATE06,ATE07}
+{
+[Joining_01 ATE02 Joining_02]
+[Joining_01 ATE01 Joining_Start]
+[Joining_02 ATE04 Joining_06]
+[Joining_02 ATE03 Joining_03]
+[Joining_03 ATE06 Joining_04]
+[Joining_03 ATE05 Joining_05]
+[Joining_04 MCE03 Joining_Start]
+[Joining_04 MCE02 Joining_Start]
+[Joining_04 MCE01 Joining_Start]
+[Joining_05 MCE05 Joining_02]
+[Joining_05 MCE03 Joining_Start]
+[Joining_05 MCE02 Joining_Start]
+[Joining_05 MCE01 Joining_Start]
+[Joining_06 MCE06 Joining_End]
+[Joining_06 MCE05 Joining_02]
+[Joining_06 MCE03 Joining_Start]
+[Joining_06 MCE02 Joining_Start]
+[Joining_06 MCE01 Joining_Start]
+[Joining_End MCE03 Joining_Start]
+[Joining_End MCE02 Joining_Start]
+[Joining_End MCE01 Joining_Start]
+[Joining_End ATE07 Joining_06]
+[Joining_End MCE06 Joining_End]
+[Joining_Start MCE03 Joining_Start]
+[Joining_Start MCE02 Joining_Start]
+[Joining_Start MCE01 Joining_Start]
+[Joining_Start MCE04 Joining_01]
+}
+{Joining_01,Joining_02,Joining_03,Joining_04,Joining_05,Joining_06,Joining_End,Joining_Start}
