@@ -336,7 +336,7 @@
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <LabelGeometry Anchor="NW">
-                                <Point X="-91" Y="-29"/>
+                                <Point X="-43" Y="-26"/>
                             </LabelGeometry>
                         </LabelBlock>
                         <SplineGeometry>
@@ -574,11 +574,11 @@
                             <SimpleIdentifier Name="MCE02:RTL"/>
                             <SimpleIdentifier Name="MCE01:EL"/>
                             <LabelGeometry Anchor="NW">
-                                <Point X="245" Y="-81"/>
+                                <Point X="288" Y="-91"/>
                             </LabelGeometry>
                         </LabelBlock>
                         <SplineGeometry>
-                            <Point X="602" Y="607"/>
+                            <Point X="577" Y="586"/>
                         </SplineGeometry>
                     </Edge>
                     <Edge Source="Joining05" Target="Standby_RTL_EL">
@@ -587,316 +587,11 @@
                             <SimpleIdentifier Name="MCE02:RTL"/>
                             <SimpleIdentifier Name="MCE01:EL"/>
                             <LabelGeometry Anchor="NW">
-                                <Point X="93" Y="-63"/>
+                                <Point X="106" Y="-57"/>
                             </LabelGeometry>
                         </LabelBlock>
                         <SplineGeometry>
                             <Point X="331" Y="109"/>
-                        </SplineGeometry>
-                    </Edge>
-                </EdgeList>
-            </Graph>
-        </SimpleComponent>
-        <SimpleComponent Kind="PLANT" Name="copy_of_AP:Joining">
-            <Graph>
-                <NodeList>
-                    <SimpleNode Initial="true" Name="Standby">
-                        <EventList>
-                            <SimpleIdentifier Name=":accepting"/>
-                        </EventList>
-                        <PointGeometry>
-                            <Point X="128" Y="432"/>
-                        </PointGeometry>
-                        <InitialArrowGeometry>
-                            <Point X="-5" Y="26"/>
-                        </InitialArrowGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="-47" Y="-41"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_02">
-                        <PointGeometry>
-                            <Point X="672" Y="432"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="-30" Y="15"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Refueling01">
-                        <PointGeometry>
-                            <Point X="1216" Y="432"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="-27" Y="17"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_06">
-                        <PointGeometry>
-                            <Point X="960" Y="432"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="-19" Y="18"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_03">
-                        <PointGeometry>
-                            <Point X="672" Y="320"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="0" Y="10"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_04">
-                        <PointGeometry>
-                            <Point X="672" Y="208"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="6" Y="17"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_05">
-                        <PointGeometry>
-                            <Point X="912" Y="320"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="1" Y="12"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="Joining_01">
-                        <PointGeometry>
-                            <Point X="464" Y="432"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="-23" Y="19"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="RTL">
-                        <PointGeometry>
-                            <Point X="128" Y="576"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="0" Y="10"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                    <SimpleNode Name="EL">
-                        <PointGeometry>
-                            <Point X="128" Y="688"/>
-                        </PointGeometry>
-                        <LabelGeometry Anchor="NW">
-                            <Point X="0" Y="10"/>
-                        </LabelGeometry>
-                    </SimpleNode>
-                </NodeList>
-                <EdgeList>
-                    <Edge Source="Joining_02" Target="Joining_06">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE04:Join_Connection_yes"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-50" Y="-24"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                    </Edge>
-                    <Edge Source="Joining_06" Target="Refueling01">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE06:Ref_Init"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-59" Y="-24"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="1088" Y="412"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_02" Target="Joining_03">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE03:Join_Connection_no"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-165" Y="-12"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                    </Edge>
-                    <Edge Source="Joining_03" Target="Joining_04">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE06:Join_Wait_timeout_yes"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-90" Y="10"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                    </Edge>
-                    <Edge Source="Joining_03" Target="Joining_05">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE05:Join_Wait_timeout_no"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-76" Y="-18"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                    </Edge>
-                    <Edge Source="Joining_05" Target="Joining_02">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE05:Join_Wait"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-10" Y="-22"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="803" Y="373"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_04" Target="Standby">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE03:Standby"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="8" Y="-63"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="287" Y="249"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_06" Target="Joining_02">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE05:Join_Wait"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-46" Y="-8"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="822" Y="466"/>
-                        </SplineGeometry>
-                        <EndPointGeometry>
-                            <Point X="672" Y="432"/>
-                        </EndPointGeometry>
-                    </Edge>
-                    <Edge Source="Standby" Target="Joining_01">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE04:Join_Init"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-12" Y="-23"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="297" Y="410"/>
-                        </SplineGeometry>
-                        <EndPointGeometry>
-                            <Point X="464" Y="432"/>
-                        </EndPointGeometry>
-                    </Edge>
-                    <Edge Source="Joining_01" Target="Joining_02">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE02:Join_Init_Succ"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-50" Y="-19"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                    </Edge>
-                    <Edge Source="Joining_01" Target="Standby">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE01:Join_Init_Fail"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-30" Y="-3"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="302" Y="456"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Refueling01" Target="Joining_06">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="ATE07:Ref_Init_Fail"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-69" Y="5"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="1088" Y="452"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_06" Target="Standby">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE03:Standby"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-34" Y="-34"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="617" Y="547"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_05" Target="Standby">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE03:Standby"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="143" Y="-35"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="644" Y="254"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_04" Target="RTL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE02:RTL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-50" Y="-18"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="277" Y="275"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_04" Target="EL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE01:EL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="38" Y="-69"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="265" Y="310"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_05" Target="RTL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE02:RTL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="-36" Y="-34"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="320" Y="127"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_05" Target="EL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE01:EL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="3" Y="-33"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="300" Y="166"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_06" Target="RTL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE02:RTL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="33" Y="-2"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="690" Y="611"/>
-                        </SplineGeometry>
-                    </Edge>
-                    <Edge Source="Joining_06" Target="EL">
-                        <LabelBlock>
-                            <SimpleIdentifier Name="MCE01:EL"/>
-                            <LabelGeometry Anchor="NW">
-                                <Point X="44" Y="-2"/>
-                            </LabelGeometry>
-                        </LabelBlock>
-                        <SplineGeometry>
-                            <Point X="758" Y="633"/>
                         </SplineGeometry>
                     </Edge>
                 </EdgeList>
@@ -1633,7 +1328,7 @@
         <SimpleComponent Kind="PLANT" Name="Sys:Control">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Control_01">
+                    <SimpleNode Initial="true" Name="Control01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1644,7 +1339,7 @@
                             <Point X="-23" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Control_02">
+                    <SimpleNode Name="Control02">
                         <PointGeometry>
                             <Point X="336" Y="288"/>
                         </PointGeometry>
@@ -1652,7 +1347,7 @@
                             <Point X="-16" Y="19"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Control_03">
+                    <SimpleNode Name="Control03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1665,7 +1360,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Control_01" Target="Control_02">
+                    <Edge Source="Control01" Target="Control02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE04:Control_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -1676,7 +1371,7 @@
                             <Point X="232" Y="272"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Control_02" Target="Control_01">
+                    <Edge Source="Control02" Target="Control01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE05:Control_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -1687,7 +1382,7 @@
                             <Point X="232" Y="304"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Control_02" Target="Control_03">
+                    <Edge Source="Control02" Target="Control03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE06:Control_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -1857,7 +1552,7 @@
         <SimpleComponent Kind="PLANT" Name="Sys:Engine">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Engine_01">
+                    <SimpleNode Initial="true" Name="Engine01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1868,7 +1563,7 @@
                             <Point X="-13" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Engine_02">
+                    <SimpleNode Name="Engine02">
                         <PointGeometry>
                             <Point X="448" Y="272"/>
                         </PointGeometry>
@@ -1876,7 +1571,7 @@
                             <Point X="-3" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Engine_03">
+                    <SimpleNode Name="Engine03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1889,7 +1584,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Engine_01" Target="Engine_02">
+                    <Edge Source="Engine01" Target="Engine02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE09:Engine_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -1900,7 +1595,7 @@
                             <Point X="344" Y="256"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Engine_02" Target="Engine_01">
+                    <Edge Source="Engine02" Target="Engine01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE10:Engine_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -1911,7 +1606,7 @@
                             <Point X="344" Y="288"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Engine_02" Target="Engine_03">
+                    <Edge Source="Engine02" Target="Engine03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE11:Engine_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -1925,7 +1620,7 @@
         <SimpleComponent Kind="PLANT" Name="Sys:Dro_pro">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Dro_pro_01">
+                    <SimpleNode Initial="true" Name="Dro_pro01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1936,7 +1631,7 @@
                             <Point X="-16" Y="12"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Dro_pro_02">
+                    <SimpleNode Name="Dro_pro02">
                         <PointGeometry>
                             <Point X="304" Y="192"/>
                         </PointGeometry>
@@ -1944,7 +1639,7 @@
                             <Point X="0" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Dro_pro_03">
+                    <SimpleNode Name="Dro_pro03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -1957,7 +1652,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Dro_pro_01" Target="Dro_pro_02">
+                    <Edge Source="Dro_pro01" Target="Dro_pro02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE12:dro_pro_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -1968,7 +1663,7 @@
                             <Point X="200" Y="176"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Dro_pro_02" Target="Dro_pro_01">
+                    <Edge Source="Dro_pro02" Target="Dro_pro01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE13:dro_pro_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -1979,7 +1674,7 @@
                             <Point X="200" Y="208"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Dro_pro_02" Target="Dro_pro_03">
+                    <Edge Source="Dro_pro02" Target="Dro_pro03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE14:dro_pro_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -1993,7 +1688,7 @@
         <SimpleComponent Kind="PLANT" Name="Sys:Datalink">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Datalink_01">
+                    <SimpleNode Initial="true" Name="Datalink01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2004,7 +1699,7 @@
                             <Point X="-17" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Datalink_02">
+                    <SimpleNode Name="Datalink02">
                         <PointGeometry>
                             <Point X="592" Y="272"/>
                         </PointGeometry>
@@ -2012,7 +1707,7 @@
                             <Point X="0" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Datalink_03">
+                    <SimpleNode Name="Datalink03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2025,7 +1720,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Datalink_01" Target="Datalink_02">
+                    <Edge Source="Datalink01" Target="Datalink02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE15:datalink_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2036,7 +1731,7 @@
                             <Point X="488" Y="256"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Datalink_02" Target="Datalink_01">
+                    <Edge Source="Datalink02" Target="Datalink01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE16:datalink_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2047,7 +1742,7 @@
                             <Point X="488" Y="288"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Datalink_02" Target="Datalink_03">
+                    <Edge Source="Datalink02" Target="Datalink03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE17:datalink_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2061,7 +1756,7 @@
         <SimpleComponent Kind="PLANT" Name="Sys:TankerSafety">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="TankerSafety_01">
+                    <SimpleNode Initial="true" Name="Tankersafety01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2072,7 +1767,7 @@
                             <Point X="-33" Y="19"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="TankerSafety_02">
+                    <SimpleNode Name="Tankersafety02">
                         <PointGeometry>
                             <Point X="416" Y="304"/>
                         </PointGeometry>
@@ -2080,7 +1775,7 @@
                             <Point X="-12" Y="15"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="TankerSafety_03">
+                    <SimpleNode Name="Tankersafety03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2093,7 +1788,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="TankerSafety_01" Target="TankerSafety_02">
+                    <Edge Source="Tankersafety01" Target="Tankersafety02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE18:Tanker_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2104,7 +1799,7 @@
                             <Point X="312" Y="288"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="TankerSafety_02" Target="TankerSafety_01">
+                    <Edge Source="Tankersafety02" Target="Tankersafety01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE19:Tanker_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2115,7 +1810,7 @@
                             <Point X="312" Y="320"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="TankerSafety_02" Target="TankerSafety_03">
+                    <Edge Source="Tankersafety02" Target="Tankersafety03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE20:Tanker_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2278,7 +1973,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Control">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Control_01">
+                    <SimpleNode Initial="true" Name="SpecControl01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2289,7 +1984,7 @@
                             <Point X="-40" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Control_02">
+                    <SimpleNode Name="SpecControl02">
                         <PointGeometry>
                             <Point X="496" Y="400"/>
                         </PointGeometry>
@@ -2297,7 +1992,7 @@
                             <Point X="-48" Y="23"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Control_03">
+                    <SimpleNode Name="SpecControl03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2308,7 +2003,7 @@
                             <Point X="-18" Y="28"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Control_99">
+                    <SimpleNode Name="SpecControl99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -2316,12 +2011,12 @@
                             <Point X="576" Y="544"/>
                         </PointGeometry>
                         <LabelGeometry Anchor="NW">
-                            <Point X="-58" Y="18"/>
+                            <Point X="-57" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Control_01" Target="Spec_Control_02">
+                    <Edge Source="SpecControl01" Target="SpecControl02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE04:Control_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2332,7 +2027,7 @@
                             <Point X="392" Y="384"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Control_02" Target="Spec_Control_01">
+                    <Edge Source="SpecControl02" Target="SpecControl01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE05:Control_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2343,7 +2038,7 @@
                             <Point X="392" Y="416"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Control_02" Target="Spec_Control_03">
+                    <Edge Source="SpecControl02" Target="SpecControl03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE06:Control_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2351,7 +2046,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Control_01" Target="Spec_Control_01">
+                    <Edge Source="SpecControl01" Target="SpecControl01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2371,7 +2066,7 @@
                             <Point X="292" Y="323"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Control_02" Target="Spec_Control_02">
+                    <Edge Source="SpecControl02" Target="SpecControl02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>
@@ -2385,7 +2080,7 @@
                             <Point X="504" Y="318"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Control_02" Target="Spec_Control_99">
+                    <Edge Source="SpecControl02" Target="SpecControl99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE06:Ref_Init"/>
@@ -2398,7 +2093,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Control_03" Target="Spec_Control_99">
+                    <Edge Source="SpecControl03" Target="SpecControl99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2421,7 +2116,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Fuel">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Fuel_01">
+                    <SimpleNode Initial="true" Name="SpecFuel01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2432,7 +2127,7 @@
                             <Point X="-25" Y="9"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Fuel_02">
+                    <SimpleNode Name="SpecFuel02">
                         <PointGeometry>
                             <Point X="448" Y="368"/>
                         </PointGeometry>
@@ -2440,7 +2135,7 @@
                             <Point X="-18" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Fuel_03">
+                    <SimpleNode Name="SpecFuel03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2451,7 +2146,7 @@
                             <Point X="0" Y="10"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Fuel_99">
+                    <SimpleNode Name="SpecFuel99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -2459,12 +2154,12 @@
                             <Point X="544" Y="496"/>
                         </PointGeometry>
                         <LabelGeometry Anchor="NW">
-                            <Point X="-42" Y="21"/>
+                            <Point X="-42" Y="22"/>
                         </LabelGeometry>
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Fuel_01" Target="Spec_Fuel_02">
+                    <Edge Source="SpecFuel01" Target="SpecFuel02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE07:Fuel_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2472,7 +2167,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Fuel_02" Target="Spec_Fuel_03">
+                    <Edge Source="SpecFuel02" Target="SpecFuel03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE08:Fuel_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2480,7 +2175,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Fuel_01" Target="Spec_Fuel_01">
+                    <Edge Source="SpecFuel01" Target="SpecFuel01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -2501,7 +2196,7 @@
                             <Point X="244" Y="291"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Fuel_02" Target="Spec_Fuel_02">
+                    <Edge Source="SpecFuel02" Target="SpecFuel02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE02:RTL"/>
                             <SimpleIdentifier Name="MCE12:Ref_Transfer_Wait"/>
@@ -2515,7 +2210,7 @@
                             <Point X="456" Y="286"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Fuel_02" Target="Spec_Fuel_99">
+                    <Edge Source="SpecFuel02" Target="SpecFuel99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2529,7 +2224,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Fuel_03" Target="Spec_Fuel_99">
+                    <Edge Source="SpecFuel03" Target="SpecFuel99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -2553,7 +2248,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Engine">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Engine_01">
+                    <SimpleNode Initial="true" Name="SpecEngine01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2564,7 +2259,7 @@
                             <Point X="-39" Y="19"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Engine_02">
+                    <SimpleNode Name="SpecEngine02">
                         <PointGeometry>
                             <Point X="512" Y="384"/>
                         </PointGeometry>
@@ -2572,7 +2267,7 @@
                             <Point X="-19" Y="24"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Engine_03">
+                    <SimpleNode Name="SpecEngine03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2583,7 +2278,7 @@
                             <Point X="-36" Y="22"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Engine_99">
+                    <SimpleNode Name="SpecEngine99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -2596,7 +2291,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Engine_01" Target="Spec_Engine_02">
+                    <Edge Source="SpecEngine01" Target="SpecEngine02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE09:Engine_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2607,7 +2302,7 @@
                             <Point X="392" Y="368"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Engine_02" Target="Spec_Engine_01">
+                    <Edge Source="SpecEngine02" Target="SpecEngine01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE10:Engine_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2618,7 +2313,7 @@
                             <Point X="392" Y="400"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Engine_02" Target="Spec_Engine_03">
+                    <Edge Source="SpecEngine02" Target="SpecEngine03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE11:Engine_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2626,7 +2321,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Engine_01" Target="Spec_Engine_01">
+                    <Edge Source="SpecEngine01" Target="SpecEngine01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -2647,7 +2342,7 @@
                             <Point X="277" Y="279"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Engine_02" Target="Spec_Engine_02">
+                    <Edge Source="SpecEngine02" Target="SpecEngine02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -2665,7 +2360,7 @@
                             <Point X="518" Y="299"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Engine_03" Target="Spec_Engine_99">
+                    <Edge Source="SpecEngine03" Target="SpecEngine99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -2683,7 +2378,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Engine_02" Target="Spec_Engine_99">
+                    <Edge Source="SpecEngine02" Target="SpecEngine99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE08:Ref_Cap"/>
@@ -2699,7 +2394,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Dro_pro">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Dro_pro_01">
+                    <SimpleNode Initial="true" Name="SpecDro_pro01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2710,7 +2405,7 @@
                             <Point X="-58" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Dro_pro_02">
+                    <SimpleNode Name="SpecDro_pro02">
                         <PointGeometry>
                             <Point X="576" Y="400"/>
                         </PointGeometry>
@@ -2718,7 +2413,7 @@
                             <Point X="-40" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Dro_pro_03">
+                    <SimpleNode Name="SpecDro_pro03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2729,7 +2424,7 @@
                             <Point X="-47" Y="17"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Dro_pro_99">
+                    <SimpleNode Name="SpecDro_pro99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -2737,12 +2432,12 @@
                             <Point X="672" Y="544"/>
                         </PointGeometry>
                         <LabelGeometry Anchor="NW">
-                            <Point X="-73" Y="13"/>
+                            <Point X="-51" Y="21"/>
                         </LabelGeometry>
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Dro_pro_01" Target="Spec_Dro_pro_02">
+                    <Edge Source="SpecDro_pro01" Target="SpecDro_pro02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE12:dro_pro_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2753,7 +2448,7 @@
                             <Point X="472" Y="384"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_02" Target="Spec_Dro_pro_01">
+                    <Edge Source="SpecDro_pro02" Target="SpecDro_pro01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE13:dro_pro_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2764,7 +2459,7 @@
                             <Point X="472" Y="416"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_02" Target="Spec_Dro_pro_03">
+                    <Edge Source="SpecDro_pro02" Target="SpecDro_pro03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE14:dro_pro_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2772,7 +2467,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_01" Target="Spec_Dro_pro_01">
+                    <Edge Source="SpecDro_pro01" Target="SpecDro_pro01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2790,7 +2485,7 @@
                             <Point X="372" Y="323"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_02" Target="Spec_Dro_pro_02">
+                    <Edge Source="SpecDro_pro02" Target="SpecDro_pro02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>
@@ -2802,7 +2497,7 @@
                             <Point X="584" Y="318"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_03" Target="Spec_Dro_pro_99">
+                    <Edge Source="SpecDro_pro03" Target="SpecDro_pro99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2817,7 +2512,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Dro_pro_02" Target="Spec_Dro_pro_99">
+                    <Edge Source="SpecDro_pro02" Target="SpecDro_pro99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE06:Ref_Init"/>
@@ -2836,7 +2531,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Datalink">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Datalink_01">
+                    <SimpleNode Initial="true" Name="SpecDatalink01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2847,15 +2542,15 @@
                             <Point X="-37" Y="15"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Datalink_02">
+                    <SimpleNode Name="SpecDatalink_02">
                         <PointGeometry>
                             <Point X="592" Y="400"/>
                         </PointGeometry>
                         <LabelGeometry Anchor="NW">
-                            <Point X="-44" Y="17"/>
+                            <Point X="-44" Y="16"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Datalink_03">
+                    <SimpleNode Name="SpecDatalink_03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2866,7 +2561,7 @@
                             <Point X="-26" Y="22"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Datalink_99">
+                    <SimpleNode Name="SpecDatalink_99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -2879,7 +2574,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Datalink_01" Target="Spec_Datalink_02">
+                    <Edge Source="SpecDatalink01" Target="SpecDatalink_02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE15:datalink_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -2890,7 +2585,7 @@
                             <Point X="488" Y="384"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Datalink_02" Target="Spec_Datalink_01">
+                    <Edge Source="SpecDatalink_02" Target="SpecDatalink01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE16:datalink_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -2901,7 +2596,7 @@
                             <Point X="488" Y="416"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Datalink_02" Target="Spec_Datalink_03">
+                    <Edge Source="SpecDatalink_02" Target="SpecDatalink_03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE17:datalink_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -2909,7 +2604,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Datalink_01" Target="Spec_Datalink_01">
+                    <Edge Source="SpecDatalink01" Target="SpecDatalink01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2927,7 +2622,7 @@
                             <Point X="388" Y="323"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Datalink_02" Target="Spec_Datalink_02">
+                    <Edge Source="SpecDatalink_02" Target="SpecDatalink_02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>
@@ -2942,7 +2637,7 @@
                             <Point X="600" Y="318"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Datalink_03" Target="Spec_Datalink_99">
+                    <Edge Source="SpecDatalink_03" Target="SpecDatalink_99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -2957,7 +2652,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_Datalink_02" Target="Spec_Datalink_99">
+                    <Edge Source="SpecDatalink_02" Target="SpecDatalink_99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE08:Ref_Cap"/>
@@ -2973,7 +2668,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_TankerSafety">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_TankerSafety_01">
+                    <SimpleNode Initial="true" Name="SpecTankerSafety01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -2984,7 +2679,7 @@
                             <Point X="-64" Y="14"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_TankerSafety_02">
+                    <SimpleNode Name="SpecTankerSafety02">
                         <PointGeometry>
                             <Point X="544" Y="448"/>
                         </PointGeometry>
@@ -2992,7 +2687,7 @@
                             <Point X="-29" Y="39"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_TankerSafety_03">
+                    <SimpleNode Name="SpecTankerSafety03">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -3003,7 +2698,7 @@
                             <Point X="10" Y="15"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_TankerSafety_99">
+                    <SimpleNode Name="SpecTankerSafety99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -3016,7 +2711,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_TankerSafety_01" Target="Spec_TankerSafety_02">
+                    <Edge Source="SpecTankerSafety01" Target="SpecTankerSafety02">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE18:Tanker_suspension"/>
                             <LabelGeometry Anchor="NW">
@@ -3027,7 +2722,7 @@
                             <Point X="440" Y="432"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_02" Target="Spec_TankerSafety_01">
+                    <Edge Source="SpecTankerSafety02" Target="SpecTankerSafety01">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE19:Tanker_recover"/>
                             <LabelGeometry Anchor="NW">
@@ -3038,7 +2733,7 @@
                             <Point X="440" Y="464"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_02" Target="Spec_TankerSafety_03">
+                    <Edge Source="SpecTankerSafety02" Target="SpecTankerSafety03">
                         <LabelBlock>
                             <SimpleIdentifier Name="SFE20:Tanker_breakdown"/>
                             <LabelGeometry Anchor="NW">
@@ -3046,7 +2741,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_01" Target="Spec_TankerSafety_01">
+                    <Edge Source="SpecTankerSafety01" Target="SpecTankerSafety01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -3064,7 +2759,7 @@
                             <Point X="340" Y="371"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_02" Target="Spec_TankerSafety_02">
+                    <Edge Source="SpecTankerSafety02" Target="SpecTankerSafety02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>
@@ -3079,7 +2774,7 @@
                             <Point X="552" Y="366"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_03" Target="Spec_TankerSafety_99">
+                    <Edge Source="SpecTankerSafety03" Target="SpecTankerSafety99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
@@ -3094,7 +2789,7 @@
                             </LabelGeometry>
                         </LabelBlock>
                     </Edge>
-                    <Edge Source="Spec_TankerSafety_02" Target="Spec_TankerSafety_99">
+                    <Edge Source="SpecTankerSafety02" Target="SpecTankerSafety99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE08:Ref_Cap"/>
@@ -3110,7 +2805,7 @@
         <SimpleComponent Kind="SPEC" Name="Spec_Pilot">
             <Graph>
                 <NodeList>
-                    <SimpleNode Initial="true" Name="Spec_Pilot_01">
+                    <SimpleNode Initial="true" Name="SpecPilot01">
                         <EventList>
                             <SimpleIdentifier Name=":accepting"/>
                         </EventList>
@@ -3121,7 +2816,7 @@
                             <Point X="-30" Y="15"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Pilot_02">
+                    <SimpleNode Name="SpecPilot02">
                         <PointGeometry>
                             <Point X="672" Y="384"/>
                         </PointGeometry>
@@ -3129,7 +2824,7 @@
                             <Point X="-11" Y="9"/>
                         </LabelGeometry>
                     </SimpleNode>
-                    <SimpleNode Name="Spec_Pilot_99">
+                    <SimpleNode Name="SpecPilot99">
                         <EventList>
                             <SimpleIdentifier Name=":forbidden"/>
                         </EventList>
@@ -3142,7 +2837,7 @@
                     </SimpleNode>
                 </NodeList>
                 <EdgeList>
-                    <Edge Source="Spec_Pilot_01" Target="Spec_Pilot_02">
+                    <Edge Source="SpecPilot01" Target="SpecPilot02">
                         <LabelBlock>
                             <SimpleIdentifier Name="MIE03:Standby"/>
                             <SimpleIdentifier Name="MIE02:RTL"/>
@@ -3155,7 +2850,7 @@
                             <Point X="519" Y="355"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Pilot_02" Target="Spec_Pilot_01">
+                    <Edge Source="SpecPilot02" Target="SpecPilot01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE03:Standby"/>
                             <SimpleIdentifier Name="MCE02:RTL"/>
@@ -3168,7 +2863,7 @@
                             <Point X="520" Y="400"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Pilot_01" Target="Spec_Pilot_01">
+                    <Edge Source="SpecPilot01" Target="SpecPilot01">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>
@@ -3190,7 +2885,7 @@
                             <Point X="371" Y="293"/>
                         </SplineGeometry>
                     </Edge>
-                    <Edge Source="Spec_Pilot_02" Target="Spec_Pilot_99">
+                    <Edge Source="SpecPilot02" Target="SpecPilot99">
                         <LabelBlock>
                             <SimpleIdentifier Name="MCE04:Join_Init"/>
                             <SimpleIdentifier Name="MCE05:Join_Wait"/>

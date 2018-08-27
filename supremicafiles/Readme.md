@@ -1,2 +1,2 @@
-# Supremica Files
-The .wmod files can only be opened by the free supremica software, which can be downloaded at [Supremica](https://supremica.org/ "visit their website"). "AAR_V4.0_paper.wmod" is in correspondence to the AAR design, while "SimpleAAR.wmod" is in correspondence to the Simple AAR.
+#Supremica Files
+The .wmod files can only be opened by the free supremica software, which can be downloaded at [Supremica](https://supremica.org/ "visit their website"). "AAR_V4.0_paper.wmod" is in correspondence to the AAR design.

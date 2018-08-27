@@ -5,3 +5,5 @@ The *supremicafiles* directory contains the auxiliary Supremica files, which hel
 
 The *SRC* directory contains tools which help the user compute the supervisor from the supremica output xml files. Meanwhile, the user can directly compute the supervisor according to the guidance of STSLib. (The STSLib can be found in ./SRC/supremica2sts/STS_20140801)
 
+The *Supplement* directory contains pictures and papers supplementary to the journal paper. In detail, it contains all the STS design photos and the comprehensive safety issues.
+

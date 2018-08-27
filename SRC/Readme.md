@@ -1,2 +1,2 @@
 # Source Code
-This directory contains all the necessary code for computation and simulation (except for the in-house MATLAB simulation platform). Please review and run them in the sequence as *supremica2sts*, *bdd2table* and *Simulation*.
+This directory contains all the necessary code for computation and simulation (except for the in-house MATLAB simulation platform). Please look through and run them in the sequence as *supremica2sts*, *bdd2table* and *Simulation*.
